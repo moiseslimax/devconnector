@@ -16,6 +16,7 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Landing from './components/layout/Landing';
 import Dashboard from './components/dashboard/Dashboard';
+import CreateProfile from './components/create-profile/CreateProfile';
 import { clearCurrentProfile } from './actions/profileActions';
 
 //check for tokens
@@ -39,7 +40,6 @@ if (localStorage.jwtToken) {
   }
 }
 
-
 class App extends Component {
   render() {
     return (
@@ -53,6 +53,7 @@ class App extends Component {
             <Route exact path="/register" component={Register}/>
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard}/>
+              <PrivateRoute exact path="/create-profile" component={CreateProfile}/>
             </Switch>
           </div>
           <Footer/>
